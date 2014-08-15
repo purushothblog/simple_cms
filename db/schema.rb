@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813093014) do
+ActiveRecord::Schema.define(version: 20140814174627) do
 
-  create_table "users", force: true do |t|
-    t.string   "first_name", limit: 25
-    t.string   "last_name",  limit: 50
-    t.string   "email",                 default: "", null: false
+  create_table "admin_users", force: true do |t|
+    t.string   "first_name",      limit: 25
+    t.string   "last_name",       limit: 50
+    t.string   "email",           limit: 100, default: "", null: false
+    t.string   "username",        limit: 25
+    t.string   "hashed_password", limit: 40
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
+
+  add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
 
 end
