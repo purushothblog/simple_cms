@@ -15,8 +15,21 @@ class SubjectsController < ApplicationController
   end
 
   def create
+    @subject = Subject.new(subject_params)
+    if @subject.save
+        redirect_to(:action => 'index')
+    else
+        render('new')
+    end
   end
 
   def delete
   end
+
+  private
+
+  def subject_params
+    params.require(:subject).permit(:name, :position, :visible)
+  end
+
 end
