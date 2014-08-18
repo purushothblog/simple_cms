@@ -55,19 +55,4 @@ class SectionsController < ApplicationController
       params.require(:section).permit(:page_id, :name, :position, :visible, :content_type, :content)
     end
 
-endclass SectionsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def delete
-  end
 end
