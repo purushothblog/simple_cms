@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 20140817100114) do
   add_index "admin_users_pages", ["admin_user_id", "page_id"], name: "index_admin_users_pages_on_admin_user_id_and_page_id", using: :btree
 
   create_table "pages", force: true do |t|
-    t.integer "subject_id"
-    t.string  "name"
-    t.integer "permalink"
-    t.integer "position"
-    t.boolean "visible"
+    t.integer  "subject_id"
+    t.string   "name"
+    t.string   "permalink"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "pages", ["permalink"], name: "index_pages_on_permalink", using: :btree
@@ -53,12 +55,14 @@ ActiveRecord::Schema.define(version: 20140817100114) do
   add_index "section_edits", ["admin_user_id", "section_id"], name: "index_section_edits_on_admin_user_id_and_section_id", using: :btree
 
   create_table "sections", force: true do |t|
-    t.integer "page_id"
-    t.string  "name"
-    t.integer "position"
-    t.boolean "visible"
-    t.string  "content-type"
-    t.text    "content"
+    t.integer  "page_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",      default: false
+    t.string   "content_type"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "sections", ["page_id"], name: "index_sections_on_page_id", using: :btree
