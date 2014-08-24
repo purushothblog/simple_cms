@@ -28,12 +28,12 @@ a:hover {}
 #header { height: 4em; padding-top: 1em; text-align: center; 
   background: #993120; color: #FFFFFF; }
 #header h1 { margin: 0; padding: 0; }
-#main { min-height: 500px; background: #F2DC87; }
+#main { min-height: 580px; background: #F2DC87; }
 #navigation { float: left; width: 180px; min-height: 480px; padding: 10px; 
   background: #94B26F; color: #4C2516; }
 #content { padding: 10px; }
 #footer { clear: both; height: 2.5em; text-align: right;
-  background: #4C2516; color: #F2DC87; }
+  background: #4C2516 url('/assets/footer_gradient.png') repeat-y 0 0; color: #F2DC87; }
 #footer p { margin: 0; padding: 0.5em 1em; }
 
 /* Navigation */
