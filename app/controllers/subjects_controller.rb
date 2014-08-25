@@ -26,6 +26,7 @@ class SubjectsController < ApplicationController
 
   def edit
     @subject = Subject.find(params[:id])
+    @subject_count = Subject.count
   end
 
   def update
@@ -35,6 +36,7 @@ class SubjectsController < ApplicationController
         redirect_to(:action => 'show', :id => @subject.id)
     else
         render('edit')
+         @subject_count = Subject.count
     end
   end
 
